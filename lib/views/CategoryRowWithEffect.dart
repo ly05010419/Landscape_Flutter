@@ -20,16 +20,16 @@ class _CategoryRowWithEffectState extends State<CategoryRowWithEffect> {
     super.initState();
 
     controller = ScrollController();
-    controller.addListener((){
-
-      print('controller.position.pixels:${controller.position.pixels}');
-    });
+    controller.addListener(() {});
   }
 
   @override
   Widget build(BuildContext context) {
+    double width = 170;
+    double height = 200;
+
     return Container(
-      height: 300,
+      height: 330,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -37,24 +37,46 @@ class _CategoryRowWithEffectState extends State<CategoryRowWithEffect> {
             padding: const EdgeInsets.only(left: 20, top: 10),
             child: Text(
               widget.name,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             ),
           ),
-          Expanded(
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.all(10),
-              controller: controller,
-              itemCount: widget.landmarks.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: CategoryItemLarge(
-                    landmark: widget.landmarks[index],
-                  ),
-                );
-              },
-            ),
+          AnimatedBuilder(
+            animation: controller,
+            builder: (context, child) {
+              return Expanded(
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.only(left: 20, right: 220),
+                  controller: controller,
+                  itemCount: widget.landmarks.length,
+                  itemExtent: width,
+                  itemBuilder: (context, index) {
+                    double offset =
+                        controller.position.pixels - (index * (width));
+                    double degree = -(offset / 600.0);
+
+                    return Transform(
+                      alignment: FractionalOffset.center,
+                      transform: Matrix4.identity()
+                        ..setEntry(3, 2, 0.006) // perspective
+                        ..rotateY(degree),
+                      child: Container(
+                        width: width,
+                        height: height,
+                        child: Align(
+                          alignment: Alignment.bottomCenter,
+                          child: CategoryItemLarge(
+                            landmark: widget.landmarks[index],
+                            width: width,
+                            height: height,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              );
+            },
           ),
         ],
       ),

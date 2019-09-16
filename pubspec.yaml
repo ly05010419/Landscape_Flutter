@@ -41,7 +41,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/charleyrivers.jpg
-    - assets/images/charleyrivers.jpg
     - assets/images/chilkoottrail.jpg
     - assets/images/chincoteague.jpg
     - assets/images/hiddenlake.jpg

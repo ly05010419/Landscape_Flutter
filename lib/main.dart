@@ -42,13 +42,13 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      body: landmarks != null
-          ? Center(
-          child: CategoryRowWithEffect(
-            landmarks: landmarks,
-            name: "All",
-          ))
-          : Container(),
+//      body: landmarks != null
+//          ? Center(
+//          child: CategoryRowWithEffect(
+//            landmarks: landmarks,
+//            name: "All",
+//          ))
+//          : Container(),
 
 //            body: landmarks != null ? CategoryItem(
 //        landmark: landmarks[0],
@@ -62,9 +62,10 @@ class _MyHomePageState extends State<MyHomePage> {
 //          ))
 //          : Container(),
 
-//      body: landmarks != null ? LandmarkDetail(
-//        landmark: landmarks[0],
-//      ):Container(),
+      body: landmarks != null ? LandmarkDetail(
+        landmark: landmarks[0],
+        landmarks: landmarks,
+      ):Container(),
     );
   }
 
