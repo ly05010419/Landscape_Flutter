@@ -18,7 +18,8 @@ class LandmarkDetail extends StatelessWidget {
         Stack(
           children: <Widget>[
             Container(height: 350,
-              child: MapView(latitude: landmark.coordinates.latitude, longitude: landmark.coordinates.longitude,),
+              child: MapView(latitude: landmark.coordinates.latitude,
+                longitude: landmark.coordinates.longitude,),
             ),
             Padding(padding: const EdgeInsets.only(top: 250,left: 110),
               child: Avatar(imageName:landmark.getImageName(),),

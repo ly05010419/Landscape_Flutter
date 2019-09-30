@@ -42,8 +42,33 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: landmarks != null ? LandmarkDetail(
+        landmark: landmarks[0],
+        landmarks: landmarks,
+      ):Container(),
+    );
+  }
 
-      body:  HalloView(),
+  loadLandmarks() async {
+    String jsonString =
+        await rootBundle.loadString('assets/data/landmarkData.json');
+    final parsed = json.decode(jsonString).cast<Map<String, dynamic>>();
+    landmarks = parsed.map<Landmark>((json) {
+      return Landmark.fromJson(json);
+    }).toList();
+    setState(() {});
+  }
+}
+
+
+
+
+
+
+
+
+
+//      body:  HalloView(),
 
 //      body: landmarks != null
 //          ? Center(
@@ -64,36 +89,3 @@ class _MyHomePageState extends State<MyHomePage> {
 //            name: "Lakes",
 //          ))
 //          : Container(),
-
-//      body: landmarks != null ? LandmarkDetail(
-//        landmark: landmarks[0],
-//        landmarks: landmarks,
-//      ):Container(),
-
-
-
-
-    );
-
-
-  }
-
-  loadLandmarks() async {
-    String jsonString =
-        await rootBundle.loadString('assets/data/landmarkData.json');
-    final parsed = json.decode(jsonString).cast<Map<String, dynamic>>();
-    landmarks = parsed.map<Landmark>((json) {
-      return Landmark.fromJson(json);
-    }).toList();
-    setState(() {});
-  }
-
-//  loadLandmark() async {
-//    String jsonString = await rootBundle.loadString('assets/data/landmarkData.json');
-//    var jsonResponse = json.decode(jsonString);
-//    landmark = List<Landmark>.fromJson(jsonResponse);
-//    setState(() {
-//
-//    });
-//  }
-}
