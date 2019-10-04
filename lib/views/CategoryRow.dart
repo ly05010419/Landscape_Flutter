@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wwdcflutter/model/models.dart';
-import 'CategoryItem.dart';
+import '../component/CategoryItem.dart';
 
 class CategoryRow extends StatelessWidget {
   final List<Landmark> landmarks;

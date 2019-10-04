@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wwdcflutter/model/models.dart';
 import 'package:wwdcflutter/views/CategoryItemLarge.dart';
-import 'CategoryItem.dart';
+import '../component/CategoryItem.dart';
 
 class CategoryRowWithEffect extends StatefulWidget {
   final List<Landmark> landmarks;

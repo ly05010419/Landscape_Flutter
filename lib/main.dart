@@ -1,11 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:wwdcflutter/views/CategoryItem.dart';
+import 'package:wwdcflutter/component/CategoryItem.dart';
 import 'package:wwdcflutter/views/CategoryItemLarge.dart';
 import 'package:wwdcflutter/views/CategoryRow.dart';
 import 'package:wwdcflutter/views/CategoryRowWithEffect.dart';
 import 'package:wwdcflutter/views/HalloView.dart';
-import 'views/Avatar.dart';
-import 'views/MapView.dart';
+import 'component/Avatar.dart';
+import 'component/MapView.dart';
 import 'views/LandmarkDetail.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
@@ -16,7 +17,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return CupertinoApp(
       debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
@@ -30,6 +31,13 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+var items = const [
+  "Home",
+  "mapWithAvatar",
+  "Avatar",
+  "MapView",
+];
+
 class _MyHomePageState extends State<MyHomePage> {
   List<Landmark> landmarks;
 
@@ -41,11 +49,63 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: landmarks != null ? LandmarkDetail(
-        landmark: landmarks[0],
-        landmarks: landmarks,
-      ):Container(),
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text("WWDC19"),
+      ),
+      child: SafeArea(
+        child: ListView.separated(
+          separatorBuilder: (_, index) => SizedBox(
+            width: double.infinity,
+            height: 1,
+            child: Divider(
+              indent: 16,
+              color: Color.fromRGBO(200, 199, 204, 1.0),
+            ),
+          ),
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LandmarkDetail(
+                      landmark: landmarks[0],
+                      landmarks: landmarks,
+                    ),
+                  ),
+                );
+              },
+              child: Container(
+                height: 44,
+                color: Colors.white,
+                width: double.infinity,
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(18, 12, 18, 12),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        items[index],
+                        style: TextStyle(
+                          fontWeight: FontWeight.normal,
+                          fontSize: 18,
+                          color: Colors.black,
+                        ),
+                      ),
+                      Icon(
+                        Icons.navigate_next,
+                        color: Color.fromRGBO(200, 199, 204, 1.0),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+      ),
     );
   }
 
@@ -60,15 +120,19 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+//      body: landmarks != null ? LandmarkDetail(
+//        landmark: landmarks[0],
+//        landmarks: landmarks,
+//      ):Container(),
 
-
-
-
-
-
-
-
-//      body:  HalloView(),
+//            body:  HalloView(),
+//      body: landmarks != null
+//          ? Center(
+//              child: CategoryRow(
+//              landmarks: landmarks,
+//              name: "Lakes",
+//            ))
+//          : Container(),
 
 //      body: landmarks != null
 //          ? Center(
@@ -81,11 +145,3 @@ class _MyHomePageState extends State<MyHomePage> {
 //            body: landmarks != null ? CategoryItem(
 //        landmark: landmarks[0],
 //      ):Container(),
-
-//      body: landmarks != null
-//          ? Center(
-//          child: CategoryRow(
-//            landmarks: landmarks,
-//            name: "Lakes",
-//          ))
-//          : Container(),

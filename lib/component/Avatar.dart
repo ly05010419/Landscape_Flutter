@@ -22,7 +22,7 @@ class Avatar extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           shape: BoxShape.circle,
-          border: new Border.all(color: Colors.grey, width: 5),
+          border: new Border.all(color: Colors.grey, width: 4),
           boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10, spreadRadius: 10)]),
     );
   }
