@@ -1,33 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:wwdcflutter/model/models.dart';
-import '../component/CategoryItem.dart';
+import '../component/ItemView.dart';
 
-class CategoryRow extends StatelessWidget {
+class RowView extends StatelessWidget {
   final List<Landmark> landmarks;
   final String name;
-  CategoryRow({this.landmarks,this.name});
+  RowView({this.landmarks,this.name});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 260,
+      height: 250,
       child: Column(
         crossAxisAlignment:CrossAxisAlignment.start,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(left: 20,top: 10),
-            child: Text(name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+            padding: const EdgeInsets.only(left: 15,top: 0),
+            child: Text(name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24),),
           ),
           Expanded(
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.all(5),
               itemCount: landmarks.length,
               itemBuilder: (context,index){
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: CategoryItem(
+                  child: ItemView(
                     landmark: landmarks[index],
+                    width: 150,
+                    height: 150,
                   ),
                 );
               },

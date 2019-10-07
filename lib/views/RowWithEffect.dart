@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:wwdcflutter/model/models.dart';
-import 'package:wwdcflutter/views/CategoryItemLarge.dart';
-import '../component/CategoryItem.dart';
+import '../component/ItemView.dart';
 
-class CategoryRowWithEffect extends StatefulWidget {
+class RowWithEffect extends StatefulWidget {
   final List<Landmark> landmarks;
   final String name;
-  CategoryRowWithEffect({this.landmarks, this.name});
+  RowWithEffect({this.landmarks, this.name});
 
   @override
-  _CategoryRowWithEffectState createState() => _CategoryRowWithEffectState();
+  _RowWithEffectState createState() => _RowWithEffectState();
 }
 
-class _CategoryRowWithEffectState extends State<CategoryRowWithEffect> {
+class _RowWithEffectState extends State<RowWithEffect> {
   ScrollController controller;
 
   @override
@@ -29,12 +28,12 @@ class _CategoryRowWithEffectState extends State<CategoryRowWithEffect> {
     double height = 200;
 
     return Container(
-      height: 330,
+      height: 310,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(left: 20, top: 10),
+            padding: const EdgeInsets.only(left: 15, top: 10),
             child: Text(
               widget.name,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
@@ -46,7 +45,7 @@ class _CategoryRowWithEffectState extends State<CategoryRowWithEffect> {
               return Expanded(
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  padding: EdgeInsets.only(left: 20, right: 220),
+                  padding: EdgeInsets.only(left: 15, right: 230),
                   controller: controller,
                   itemCount: widget.landmarks.length,
                   itemExtent: width,
@@ -65,7 +64,7 @@ class _CategoryRowWithEffectState extends State<CategoryRowWithEffect> {
                         height: height,
                         child: Align(
                           alignment: Alignment.bottomCenter,
-                          child: CategoryItemLarge(
+                          child: ItemView(
                             landmark: widget.landmarks[index],
                             width: width,
                             height: height,

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wwdcflutter/model/models.dart';
 import '../component/Avatar.dart';
-import 'CategoryRowWithEffect.dart';
+import 'RowWithEffect.dart';
 import '../component/MapView.dart';
 
 
@@ -36,7 +36,7 @@ class LandmarkDetail extends StatelessWidget {
               Padding(padding: const EdgeInsets.all(10.0),
                 child: Text(landmark.name,style: TextStyle(fontSize: 20),),
               ),
-              CategoryRowWithEffect(name: "All",landmarks: landmarks, )
+              RowWithEffect(name: "All",landmarks: landmarks, )
             ],),
     ),
       )
@@ -59,7 +59,7 @@ class LandmarkDetail extends StatelessWidget {
         Padding(padding: const EdgeInsets.all(10.0),
           child: Text(landmark.name,style: TextStyle(fontSize: 20),),
         ),
-        CategoryRowWithEffect(name: "All",landmarks: landmarks, )
+        RowWithEffect(name: "All",landmarks: landmarks, )
       ],),);
   }
 }
