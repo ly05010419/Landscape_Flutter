@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wwdcflutter/main.dart';
 import 'package:wwdcflutter/model/models.dart';
+import 'package:wwdcflutter/views/HomeView.dart';
 import 'package:wwdcflutter/views/LandmarkDetail.dart';
 
 class ItemView extends StatelessWidget {
