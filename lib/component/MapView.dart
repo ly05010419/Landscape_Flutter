@@ -17,7 +17,8 @@ class MapViewState extends State<MapView> {
 
   @override
   Widget build(BuildContext context) {
-    LatLng latlng = LatLng(widget.landmark.coordinates.latitude, widget.landmark.coordinates.longitude);
+    LatLng latlng = LatLng(widget.landmark.coordinates.latitude,
+        widget.landmark.coordinates.longitude);
 
     return new Scaffold(
       body: GoogleMap(
@@ -32,7 +33,7 @@ class MapViewState extends State<MapView> {
           _controller.complete(controller);
 
           Marker marker = Marker(
-              infoWindow: InfoWindow(title:widget.landmark.name),
+              infoWindow: InfoWindow(title: widget.landmark.name),
               markerId: MarkerId(latlng.toString()),
               icon: BitmapDescriptor.defaultMarkerWithHue(
                   BitmapDescriptor.hueRed),

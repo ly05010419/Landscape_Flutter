@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 import 'package:flutter/material.dart';
 
 class Avatar extends StatelessWidget {
@@ -15,7 +7,8 @@ class Avatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200.0, height: 200.0,
+      width: 200.0,
+      height: 200.0,
       decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(imageName),
@@ -23,13 +16,9 @@ class Avatar extends StatelessWidget {
           ),
           shape: BoxShape.circle,
           border: new Border.all(color: Colors.grey, width: 4),
-          boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10, spreadRadius: 10)]),
+          boxShadow: [
+            BoxShadow(color: Colors.black12, blurRadius: 10, spreadRadius: 10)
+          ]),
     );
   }
 }
-
-
-
-
-
-

@@ -1,12 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:wwdcflutter/component/ItemView.dart';
-import 'package:wwdcflutter/views/RowView.dart';
-import 'package:wwdcflutter/views/RowWithEffect.dart';
-import 'package:wwdcflutter/views/HalloView.dart';
 import 'package:wwdcflutter/views/HomeView.dart';
-import 'component/Avatar.dart';
-import 'component/MapView.dart';
 import 'views/LandmarkDetail.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
@@ -43,14 +37,12 @@ var items = const [
 List<Landmark> landmarks;
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   void initState() {
     super.initState();
     loadLandmarks();
   }
 
-  
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -71,29 +63,30 @@ class _MyHomePageState extends State<MyHomePage> {
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () {
-
-                switch(index){
-                  case 0: Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HomeView(
-                        landmark: landmarks[0],
-                        landmarks: landmarks,
+                switch (index) {
+                  case 0:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomeView(
+                          landmark: landmarks[0],
+                          landmarks: landmarks,
+                        ),
                       ),
-                    ),
-                  );break;
-                  case 1: Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => LandmarkDetail(
-                        landmark: landmarks[0],
-                        landmarks: landmarks,
+                    );
+                    break;
+                  case 1:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LandmarkDetail(
+                          landmark: landmarks[0],
+                          landmarks: landmarks,
+                        ),
                       ),
-                    ),
-                  );break;
-
+                    );
+                    break;
                 }
-
               },
               child: Container(
                 height: 44,
@@ -137,29 +130,3 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {});
   }
 }
-
-//      body: landmarks != null ? LandmarkDetail(
-//        landmark: landmarks[0],
-//        landmarks: landmarks,
-//      ):Container(),
-
-//            body:  HalloView(),
-//      body: landmarks != null
-//          ? Center(
-//              child: CategoryRow(
-//              landmarks: landmarks,
-//              name: "Lakes",
-//            ))
-//          : Container(),
-
-//      body: landmarks != null
-//          ? Center(
-//          child: CategoryRowWithEffect(
-//            landmarks: landmarks,
-//            name: "All",
-//          ))
-//          : Container(),
-
-//            body: landmarks != null ? CategoryItem(
-//        landmark: landmarks[0],
-//      ):Container(),

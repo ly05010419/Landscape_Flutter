@@ -20,7 +20,8 @@ class HomeView extends StatelessWidget {
         navigationBar: CupertinoNavigationBar(
           middle: Text(landmark.name),
         ),
-        child: SafeArea(bottom: false,
+        child: SafeArea(
+          bottom: false,
           child: SingleChildScrollView(
             child: Column(
               children: <Widget>[

@@ -17,26 +17,25 @@ class Landmark {
 
   Landmark(
       {this.id,
-        this.name,
-        this.state,
-        this.city,
-        this.park,
-        this.imageName,
-        this.isFeatured,
-        this.isFavorite,
-        this.category,
-        this.coordinates});
+      this.name,
+      this.state,
+      this.city,
+      this.park,
+      this.imageName,
+      this.isFeatured,
+      this.isFavorite,
+      this.category,
+      this.coordinates});
 
   factory Landmark.fromJson(Map<String, dynamic> json) =>
       _$LandmarkFromJson(json);
 
   Map<String, dynamic> toJson() => _$LandmarkToJson(this);
 
-  String getImageName(){
-    return "assets/images/"+imageName+".jpg";
+  String getImageName() {
+    return "assets/images/" + imageName + ".jpg";
   }
 }
-
 
 @JsonSerializable()
 class Coordinates {
