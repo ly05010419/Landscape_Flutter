@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wwdcflutter/views/HomeView.dart';
-import 'views/LandmarkDetail.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
 import 'package:wwdcflutter/model/models.dart';
@@ -27,13 +26,6 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-var items = const [
-  "Home",
-  "mapWithAvatar",
-  "Avatar",
-  "MapView",
-];
-
 List<Landmark> landmarks;
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -46,77 +38,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        middle: Text("App"),
-      ),
-      child: SafeArea(
-        child: ListView.separated(
-          separatorBuilder: (_, index) => SizedBox(
-            width: double.infinity,
-            height: 1,
-            child: Divider(
-              indent: 16,
-              color: Color.fromRGBO(200, 199, 204, 1.0),
-            ),
-          ),
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                switch (index) {
-                  case 0:
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => HomeView(
-                          landmark: landmarks[0],
-                          landmarks: landmarks,
-                        ),
-                      ),
-                    );
-                    break;
-                  case 1:
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LandmarkDetail(
-                          landmark: landmarks[0],
-                          landmarks: landmarks,
-                        ),
-                      ),
-                    );
-                    break;
-                }
-              },
-              child: Container(
-                height: 44,
-                color: Colors.white,
-                width: double.infinity,
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(18, 12, 18, 12),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        items[index],
-                        style: TextStyle(
-                          fontWeight: FontWeight.normal,
-                          fontSize: 18,
-                          color: Colors.black,
-                        ),
-                      ),
-                      Icon(
-                        Icons.navigate_next,
-                        color: Color.fromRGBO(200, 199, 204, 1.0),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            );
-          },
-        ),
-      ),
+      child: landmarks!=null?HomeView(
+        landmark: landmarks[0],
+        landmarks: landmarks,
+      ):Container(),
     );
   }
 
