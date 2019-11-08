@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wwdcflutter/model/models.dart';
 import '../component/Avatar.dart';
@@ -8,7 +7,7 @@ import '../component/MapView.dart';
 class LandmarkDetail extends StatelessWidget {
   final Landmark landmark;
   final List<Landmark> landmarks;
-  LandmarkDetail({this.landmark,this.landmarks});
+  LandmarkDetail({this.landmark, this.landmarks});
 
   @override
   Widget build(BuildContext context) {
@@ -26,22 +25,33 @@ class LandmarkDetail extends StatelessWidget {
             children: <Widget>[
               Stack(
                 children: <Widget>[
-                  Container(height: 300,
-                    child: MapView(landmark: landmark,),
+                  Container(
+                    height: 300,
+                    child: MapView(
+                      landmark: landmark,
+                    ),
                   ),
-                  Padding(padding: const EdgeInsets.only(top: 200,left: 110),
-                    child: Avatar(imageName:landmark.getImageName(),),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 200, left: 110),
+                    child: Avatar(
+                      imageName: landmark.getImageName(),
+                    ),
                   ),
                 ],
               ),
-              Padding(padding: const EdgeInsets.all(10.0),
-                child: Text(landmark.name,style: TextStyle(fontSize: 20),),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text(
+                  landmark.name,
+                  style: TextStyle(fontSize: 20),
+                ),
               ),
-              RowWithEffect(name: "All",landmarks: landmarks, )
-            ],),
-        )
-    );
+              RowWithEffect(
+                name: "All",
+                landmarks: landmarks,
+              )
+            ],
+          ),
+        ));
   }
 }
-
-
