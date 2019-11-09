@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wwdcflutter/model/models.dart';
-import 'package:wwdcflutter/views/HomeView.dart';
-import 'package:wwdcflutter/views/LandmarkDetail.dart';
+import 'package:wwdcflutter/pages/HomePage.dart';
+import 'package:wwdcflutter/pages/LandmarkDetailPage.dart';
 
 class ItemView extends StatelessWidget {
   final Landmark landmark;
@@ -22,7 +22,7 @@ class ItemView extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => LandmarkDetail(
+                  builder: (context) => LandmarkDetailPage(
                     landmark: landmark,
                     landmarks: landmarks,
                   ),

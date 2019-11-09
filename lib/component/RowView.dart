@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wwdcflutter/model/models.dart';
-import '../component/ItemView.dart';
+import 'ItemView.dart';
 
 class RowView extends StatelessWidget {
   final List<Landmark> landmarks;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wwdcflutter/views/HomeView.dart';
+import 'package:wwdcflutter/pages/HomePage.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
-      home: HomeView(),
+      home: HomePage(),
     );
   }
 }

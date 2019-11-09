@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:wwdcflutter/model/models.dart';
 import '../component/Avatar.dart';
-import 'RowWithEffect.dart';
+import '../component/RowWithEffect.dart';
 import '../component/MapView.dart';
 
-class LandmarkDetail extends StatelessWidget {
+class LandmarkDetailPage extends StatelessWidget {
   final Landmark landmark;
   final List<Landmark> landmarks;
-  LandmarkDetail({this.landmark, this.landmarks});
+  LandmarkDetailPage({this.landmark, this.landmarks});
 
   @override
   Widget build(BuildContext context) {

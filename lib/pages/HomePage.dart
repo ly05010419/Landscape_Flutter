@@ -1,19 +1,19 @@
 import "package:collection/collection.dart";
 import 'package:flutter/material.dart';
 import 'package:wwdcflutter/model/models.dart';
-import 'RowView.dart';
-import 'RowWithEffect.dart';
+import '../component/RowView.dart';
+import '../component/RowWithEffect.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
 
-class HomeView extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _HomeViewState createState() => _HomeViewState();
+  _HomePageState createState() => _HomePageState();
 }
 
 List<Landmark> landmarks;
 
-class _HomeViewState extends State<HomeView> {
+class _HomePageState extends State<HomePage> {
   Map<String, List<Landmark>> categories;
 
   void initState() {
