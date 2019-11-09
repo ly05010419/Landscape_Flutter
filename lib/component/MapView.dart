@@ -34,6 +34,10 @@ class MapViewState extends State<MapView> {
   Widget build(BuildContext context) {
     return _showGoogleMaps
         ? GoogleMap(
+            scrollGesturesEnabled: false,
+            tiltGesturesEnabled: false,
+            zoomGesturesEnabled: false,
+            rotateGesturesEnabled: false,
             markers: markers,
             mapType: MapType.normal,
             myLocationButtonEnabled: false,
@@ -43,7 +47,9 @@ class MapViewState extends State<MapView> {
             ),
             onMapCreated: mapCreated,
           )
-        : Container();
+        : Container(
+            color: Colors.grey[200],
+          );
   }
 
   void mapCreated(GoogleMapController controller) {
