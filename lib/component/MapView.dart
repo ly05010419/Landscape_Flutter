@@ -12,38 +12,48 @@ class MapView extends StatefulWidget {
 }
 
 class MapViewState extends State<MapView> {
-  Completer<GoogleMapController> _controller = Completer();
   Set<Marker> markers = {};
+  bool _showGoogleMaps = false;
+  LatLng latlng;
+
+  @override
+  void initState() {
+    super.initState();
+
+    latlng = LatLng(widget.landmark.coordinates.latitude,
+        widget.landmark.coordinates.longitude);
+
+    Future.delayed(const Duration(milliseconds: 250), () {
+      setState(() {
+        _showGoogleMaps = true;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    LatLng latlng = LatLng(widget.landmark.coordinates.latitude,
-        widget.landmark.coordinates.longitude);
+    return _showGoogleMaps
+        ? GoogleMap(
+            markers: markers,
+            mapType: MapType.normal,
+            myLocationButtonEnabled: false,
+            initialCameraPosition: CameraPosition(
+              target: latlng,
+              zoom: 7.5,
+            ),
+            onMapCreated: mapCreated,
+          )
+        : Container();
+  }
 
-    return new Scaffold(
-      body: GoogleMap(
-        markers: markers,
-        mapType: MapType.normal,
-        myLocationButtonEnabled: false,
-        initialCameraPosition: CameraPosition(
-          target: latlng,
-          zoom: 7.5,
-        ),
-        onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
+  void mapCreated(GoogleMapController controller) {
+    Marker marker = Marker(
+        infoWindow: InfoWindow(title: widget.landmark.name),
+        markerId: MarkerId(latlng.toString()),
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
+        position: latlng);
 
-          Marker marker = Marker(
-              infoWindow: InfoWindow(title: widget.landmark.name),
-              markerId: MarkerId(latlng.toString()),
-              icon: BitmapDescriptor.defaultMarkerWithHue(
-                  BitmapDescriptor.hueRed),
-              position: latlng);
-
-          markers.add(marker);
-
-          setState(() {});
-        },
-      ),
-    );
+    markers.add(marker);
+    setState(() {});
   }
 }

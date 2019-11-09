@@ -17,7 +17,6 @@ class _RowWithEffectState extends State<RowWithEffect> {
   @override
   void initState() {
     super.initState();
-
     controller = ScrollController();
     controller.addListener(() {});
   }

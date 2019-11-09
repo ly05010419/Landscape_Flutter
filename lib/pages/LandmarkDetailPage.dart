@@ -31,10 +31,12 @@ class LandmarkDetailPage extends StatelessWidget {
                       landmark: landmark,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 200, left: 110),
-                    child: Avatar(
-                      imageName: landmark.getImageName(),
+                  Align(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 200),
+                      child: Avatar(
+                        imageName: landmark.getImageName(),
+                      ),
                     ),
                   ),
                 ],
