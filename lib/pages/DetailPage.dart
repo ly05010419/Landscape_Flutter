@@ -4,10 +4,10 @@ import '../component/Avatar.dart';
 import '../component/RowWithEffect.dart';
 import '../component/MapView.dart';
 
-class LandmarkDetailPage extends StatelessWidget {
+class DetailPage extends StatelessWidget {
   final Landmark landmark;
   final List<Landmark> landmarks;
-  LandmarkDetailPage({this.landmark, this.landmarks});
+  DetailPage({this.landmark, this.landmarks});
 
   @override
   Widget build(BuildContext context) {
