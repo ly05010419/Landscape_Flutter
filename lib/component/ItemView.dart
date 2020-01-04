@@ -34,7 +34,9 @@ class ItemView extends StatelessWidget {
               height: height,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(landmark.getImageName()),
+                    image: AssetImage(
+                        "assets/images/" + landmark.imageName + ".jpg"
+                    ),
                     fit: BoxFit.cover,
                   ),
                   borderRadius: BorderRadius.circular(5),

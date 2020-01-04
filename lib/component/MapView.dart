@@ -20,8 +20,8 @@ class MapViewState extends State<MapView> {
   void initState() {
     super.initState();
 
-    latlng = LatLng(widget.landmark.coordinates.latitude,
-        widget.landmark.coordinates.longitude);
+    latlng = LatLng(widget.landmark.latitude,
+        widget.landmark.longitude);
 
     Future.delayed(const Duration(milliseconds: 250), () {
       setState(() {
