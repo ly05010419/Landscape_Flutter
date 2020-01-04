@@ -16,10 +16,7 @@ class RowView extends StatelessWidget {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(left: 15, top: 0),
-            child: Text(
-              name,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-            ),
+            child: Text(name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),),
           ),
           Expanded(
             child: ListView.builder(

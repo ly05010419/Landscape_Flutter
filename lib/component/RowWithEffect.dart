@@ -52,7 +52,6 @@ class _RowWithEffectState extends State<RowWithEffect> {
                     double offset =
                         controller.position.pixels - (index * (width));
                     double degree = -(offset / 600.0);
-
                     return Transform(
                       alignment: FractionalOffset.center,
                       transform: Matrix4.identity()
