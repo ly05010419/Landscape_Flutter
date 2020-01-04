@@ -21,3 +21,8 @@ class Landmark {
         latitude: (json['latitude'] as num)?.toDouble());
   }
 }
+
+
+
+
+

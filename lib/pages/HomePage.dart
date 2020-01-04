@@ -6,6 +6,15 @@ import '../component/RowWithEffect.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
 
+
+import 'package:http/http.dart' as http;
+
+Future<http.Response> fetchData() {
+  return http.get(url);
+}
+
+var url = 'https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/landmarkData.json?alt=media&token=b958fe71-2fbb-495b-9376-bae91736fd3f';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -66,13 +75,28 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadLandmarks() async {
-    String jsonString =
-        await rootBundle.loadString('assets/data/landmarkData.json');
-    final parsed = json.decode(jsonString).cast<Map<String, dynamic>>();
+    var url =
+        'https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/landmarkData.json?alt=media&token=b958fe71-2fbb-495b-9376-bae91736fd3f';
+
+    http.Response response = await http.get(url);
+
+    final parsed = json.decode(response.body).cast<Map<String, dynamic>>();
     landmarks = parsed.map<Landmark>((json) {
       return Landmark.fromJson(json);
     }).toList();
     categories = groupBy(landmarks, (Landmark obj) => obj.category);
     setState(() {});
   }
+
+//  loadLandmarks() async {
+//    String jsonString =
+//        await rootBundle.loadString('assets/data/landmarkData.json');
+//    final parsed = json.decode(jsonString).cast<Map<String, dynamic>>();
+//
+//    landmarks = parsed.map<Landmark>((json) {
+//      return Landmark.fromJson(json);
+//    }).toList();
+//    categories = groupBy(landmarks, (Landmark obj) => obj.category);
+//    setState(() {});
+//  }
 }

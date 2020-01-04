@@ -11,7 +11,8 @@ class Avatar extends StatelessWidget {
       height: 200.0,
       decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(imageName),
+            image: NetworkImage(imageName),
+//            image: AssetImage("assets/images/" + imageName + ".jpg"),
             fit: BoxFit.cover,
           ),
           shape: BoxShape.circle,

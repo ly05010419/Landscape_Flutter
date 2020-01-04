@@ -35,7 +35,7 @@ class LandmarkDetailPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 200),
                       child: Avatar(
-                        imageName: "assets/images/" + landmark.imageName + ".jpg",
+                        imageName: landmark.imageName,
                       ),
                     ),
                   ),
