@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
           elevation: 2.0,
-          iconTheme: Theme.of(context).iconTheme,
+          backgroundColor: Colors.white,
           title: Text(
             "Landscape",
             style: TextStyle(

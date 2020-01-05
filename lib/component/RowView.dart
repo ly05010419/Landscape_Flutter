@@ -15,7 +15,7 @@ class RowView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(left: 15, top: 0),
+            padding: const EdgeInsets.only(left: 15, top: 20),
             child: Text(name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),),
           ),
           Expanded(
