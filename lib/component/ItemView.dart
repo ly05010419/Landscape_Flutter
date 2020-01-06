@@ -25,7 +25,6 @@ class ItemView extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => DetailPage(
                     landmark: landmark,
-                    landmarks: landmarks,
                   ),
                 ),
               );

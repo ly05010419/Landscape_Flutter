@@ -6,8 +6,7 @@ import '../component/MapView.dart';
 
 class DetailPage extends StatelessWidget {
   final Landmark landmark;
-  final List<Landmark> landmarks;
-  DetailPage({this.landmark, this.landmarks});
+  DetailPage({this.landmark});
 
   @override
   Widget build(BuildContext context) {

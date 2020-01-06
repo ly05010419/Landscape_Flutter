@@ -11,10 +11,8 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-List<Landmark> landmarks;
-
 class _HomePageState extends State<HomePage> {
-  Map<String, List<Landmark>> categories;
+  List<Landmark> landmarks;
 
   void initState() {
     super.initState();
@@ -36,7 +34,8 @@ class _HomePageState extends State<HomePage> {
                     children: landmarks.map((landmark) => RowView(name: landmark.name, landmark: landmark,)).toList(),
             ) : Container(),
           ),
-        ));
+        )
+    );
   }
 
   loadData() async {
@@ -46,7 +45,6 @@ class _HomePageState extends State<HomePage> {
     landmarks = data.map<Landmark>((json) {
       return Landmark.fromJson(json);
     }).toList();
-    categories = groupBy(landmarks, (Landmark obj) => obj.category);
     setState(() {});
   }
 }
