@@ -37,13 +37,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    final url = 'https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/landmarkData1.json?alt=media&token=c33203ee-ce39-4b04-a9e0-4079058d13ee';
+    final url = 'https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/landmarkData1.json?alt=media&token=60bb174e-261d-4b12-96f2-11a86ec07c00';
     http.Response response = await http.get(url);
     final data = json.decode(response.body).cast<Map<String, dynamic>>();
-
-//    String jsonString =
-//    await rootBundle.loadString('assets/data/landmarkData.json');
-//    final data = json.decode(jsonString).cast<Map<String, dynamic>>();
     landmarks = data.map<Landmark>((json) {
       return Landmark.fromJson(json);
     }).toList();
