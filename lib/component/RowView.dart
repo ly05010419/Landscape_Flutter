@@ -10,12 +10,12 @@ class RowView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 220,
+      height: 200,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(left: 15, top: 20),
+            padding: const EdgeInsets.only(left: 15, top: 0),
             child: Text(name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
           ),
           Expanded(

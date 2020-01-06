@@ -29,10 +29,13 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.white,
           title: Text("Landschaft", style: TextStyle(color: Colors.black,fontSize: 26),),
         ),
-        body: SingleChildScrollView(
-          child: landmarks != null ? Column(
-                  children: landmarks.map((landmark) => RowView(name: landmark.name, landmark: landmark,)).toList(),
-          ) : Container(),
+        body: Padding(
+          padding: const EdgeInsets.only(top: 20),
+          child: SingleChildScrollView(
+            child: landmarks != null ? Column(
+                    children: landmarks.map((landmark) => RowView(name: landmark.name, landmark: landmark,)).toList(),
+            ) : Container(),
+          ),
         ));
   }
 
