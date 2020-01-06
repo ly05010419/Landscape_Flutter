@@ -36,7 +36,7 @@ class DetailPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 200),
                       child: Avatar(
-                        imageName: landmark.imageName,
+                        imageName: landmark.avatarName,
                       ),
                     ),
                   ),
@@ -51,7 +51,7 @@ class DetailPage extends StatelessWidget {
               ),
               RowWithEffect(
                 name: "All",
-                landmarks: landmarks,
+                landmark: landmark,
               )
             ],
           ),

@@ -1,86 +1,57 @@
 [
     {
-        "name": "Turtle Rock",
-        "category": "Rivers",
-        "longitude": -116.166868,
-        "latitude": 34.011286,
-        "imageName": "turtlerock"
+        "name": "Deutschland",
+        "avatarName": "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/Deutschland%20%2Fbrandenburger-tor-201939_640.jpg?alt=media&token=2777c4c2-65ae-4a29-9460-6cc10367265d",
+        "latitude": 52.520008,
+        "longitude": 13.404954,
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/Deutschland%20%2Fneuschwanstein-532850_640.jpg?alt=media&token=d4f1b23f-3be7-49a3-bf60-4ed9671f4cca",
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/Deutschland%20%2Fneuschwanstein-2602208_640.jpg?alt=media&token=0adf26d9-f5d5-4cde-8a7a-ecb16a868337",
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/Deutschland%20%2Fneuschwanstein-castle-467116_640.jpg?alt=media&token=4c1fc2ba-c6d2-4549-89c5-4db411f5304b",
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/Deutschland%20%2Fcologne-1078671_640.jpg?alt=media&token=21511133-9260-4f5c-a92b-a2d4f45725be",
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/Deutschland%20%2Fbastei-bridge-3014467_640.jpg?alt=media&token=bd6bc7f9-a336-48c9-bd3d-aec343174db0"
+        ]
     },
     {
-        "name": "Silver Salmon Creek",
-        "category": "Lakes",
-        "longitude": -152.665167,
-        "latitude": 59.980167,
-        "imageName": "silversalmoncreek"
-    },
-    {
-        "name": "Chilkoot Trail",
-        "category": "Mountains",
-        "longitude": -135.334571,
-        "latitude": 59.560551,
-        "imageName": "chilkoottrail"
-    },
-    {
-        "name": "St. Mary Lake",
-        "category": "Lakes",
-        "longitude": -113.536248,
-        "latitude": 48.69423,
-        "imageName": "stmarylake"
-    },
-    {
-        "name": "Twin Lake",
-        "category": "Lakes",
-        "longitude": -153.849883,
-        "latitude": 60.641684,
-        "imageName": "twinlake"
-    },
-    {
-        "name": "Lake McDonald",
-        "category": "Mountains",
-        "longitude": -113.934831,
-        "latitude": 48.56002,
-        "imageName": "lakemcdonald"
-    },
-    {
-        "name": "Charley Rivers",
-        "category": "Rivers",
-        "longitude": -143.122586,
-        "latitude": 65.350021,
-        "imageName": "charleyrivers"
-    },
-    {
-        "name": "Icy Bay",
-        "category": "Mountains",
-        "longitude": -141.518167,
-        "latitude": 60.089917,
-        "imageName": "icybay"
-    },
-    {
-        "name": "Rainbow Lake",
-        "category": "Lakes",
-        "longitude": -150.086103,
-        "latitude": 61.694334,
-        "imageName": "rainbowlake"
-    },
-    {
-        "name": "Hidden Lake",
-        "category": "Lakes",
-        "longitude": -121.17799,
-        "latitude": 48.495442,
-        "imageName": "hiddenlake"
-    },
-    {
-        "name": "Chincoteague",
-        "category": "Rivers",
-        "longitude": -75.383212,
-        "latitude": 37.91531,
-        "imageName": "chincoteague"
-    },
-    {
-        "name": "Lake Umbagog",
-        "category": "Lakes",
-        "longitude": -71.056816,
-        "latitude": 44.747408,
-        "imageName": "umbagog"
+        "name": "China",
+        "avatarName": "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/China%2Fbeijing-3675835_640.jpg?alt=media&token=096c76e1-78c5-4e88-9e69-f9aac55d3efa",
+        "latitude": 39.916668,
+        "longitude": 116.383331,
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/China%2Fpanda-3875289_640.jpg?alt=media&token=6d2aed34-3c20-4454-b3bc-089bd06f5362",
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/China%2Fgreat-wall-3022907_640.jpg?alt=media&token=c7678844-d0fe-4e3b-8b03-af6afee2c379",
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/China%2Fqianhu-miao-village-4717743_640.jpg?alt=media&token=1a63c25e-5c71-4db8-a977-fc9bd7da5a77",
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/China%2Fthe-three-gorges-788314_640.jpg?alt=media&token=3db49c03-07f2-4611-8989-9c9eac70a826",
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/China%2Fchina-2193394_640.jpg?alt=media&token=e609bed4-b119-4bdc-abbe-b684f9608051"
+        ]
     }
+,
+    {
+        "name": "Frankreich",
+        "avatarName": "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/Frankreich%2Flouvre-102840_640.jpg?alt=media&token=ec1183f1-6922-4f98-8084-9e6080a8c5b5",
+        "latitude": 48.864716,
+        "longitude": 2.349014,
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/Frankreich%2Farc-de-triomphe-101633_640.jpg?alt=media&token=128060f9-cbb8-47ff-b8f3-720948f9f790",
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/Frankreich%2Fcastle-1149756_640.jpg?alt=media&token=01882bfb-4880-45c5-baf1-e632a04894e3",
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/Frankreich%2Fchurch-3284639_640.jpg?alt=media&token=cf8e8ced-1842-46d8-b03d-254dfaf10015",
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/Frankreich%2Feiffel-tower-768501_640.jpg?alt=media&token=2c4003dd-142c-4edf-b2b6-af45018d33e3",
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/Frankreich%2Fmountains-1828596_640.jpg?alt=media&token=8eed26d6-f563-4e4c-a6bd-743c6e3007d6"
+        ]
+    }
+,
+    {
+        "name": "USA",
+        "avatarName": "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/USA%2Ftrump-2815558_640.jpg?alt=media&token=e977b537-5231-4590-a244-7c9f832e5c5e",
+        "latitude": 47.751076,
+        "longitude": -120.740135,
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/USA%2Fnew-york-668616_640.jpg?alt=media&token=da4d5ce3-316c-4016-b0b0-8e292a659c63",
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/USA%2Fmount-st-helens-164848_640.jpg?alt=media&token=53db77d2-3258-4a4d-b42a-7103ff55c661",
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/USA%2Fhorseshoe-bend-1908283_640.jpg?alt=media&token=e6da52e4-e85a-46d5-9990-c3831ada5982",
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/USA%2Flighthouse-540792_640.jpg?alt=media&token=e3f9495c-afca-4f90-b38f-92ca747a889e",
+            "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/USA%2Fgolden-gate-bridge-388917_640.jpg?alt=media&token=7ca44ca9-4216-4c3d-ac01-6b4bc9ec62cc"
+        ]
+    }
+
 ]

@@ -43,7 +43,7 @@ class MapViewState extends State<MapView> {
             myLocationButtonEnabled: false,
             initialCameraPosition: CameraPosition(
               target: latlng,
-              zoom: 7.5,
+              zoom: 5,
             ),
             onMapCreated: mapCreated,
           )

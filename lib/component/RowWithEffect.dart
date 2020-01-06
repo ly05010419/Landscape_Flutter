@@ -3,9 +3,9 @@ import 'package:wwdcflutter/model/models.dart';
 import 'ItemView.dart';
 
 class RowWithEffect extends StatefulWidget {
-  final List<Landmark> landmarks;
+  final Landmark landmark;
   final String name;
-  RowWithEffect({this.landmarks, this.name});
+  RowWithEffect({this.landmark, this.name});
 
   @override
   _RowWithEffectState createState() => _RowWithEffectState();
@@ -46,7 +46,7 @@ class _RowWithEffectState extends State<RowWithEffect> {
                   scrollDirection: Axis.horizontal,
                   padding: EdgeInsets.only(left: 15, right: 230),
                   controller: controller,
-                  itemCount: widget.landmarks.length,
+                  itemCount: widget.landmark.images.length,
                   itemExtent: width,
                   itemBuilder: (context, index) {
                     double offset =
@@ -63,7 +63,7 @@ class _RowWithEffectState extends State<RowWithEffect> {
                         child: Align(
                           alignment: Alignment.bottomCenter,
                           child: ItemView(
-                            landmark: widget.landmarks[index],
+                            imageName: widget.landmark.images[index],
                             width: width,
                             height: height,
                           ),

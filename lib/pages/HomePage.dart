@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
 
   void initState() {
     super.initState();
-    loadLandmarks();
+    loadData();
   }
 
   @override
@@ -27,41 +27,29 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           elevation: 2.0,
           backgroundColor: Colors.white,
-          title: Text(
-            "Landscape",
-            style: TextStyle(
-              color: Colors.black,
-            ),
-          ),
+          title: Text("Landschaft", style: TextStyle(color: Colors.black,fontSize: 26),),
         ),
-        body: SafeArea(
-          bottom: false,
-          child: SingleChildScrollView(
-            child: landmarks != null
-                ? Column(
-                    children: categories.keys
-                        .map((k) => RowView(
-                              name: k,
-                              landmarks: categories[k],
-                            ))
-                        .toList(),
-                  )
-                : Container(),
-          ),
+        body: SingleChildScrollView(
+          child: landmarks != null ? Column(
+                  children: landmarks.map((landmark) => RowView(name: landmark.name, landmark: landmark,)).toList(),
+          ) : Container(),
         ));
   }
 
-  loadLandmarks() async {
-    var url =
-        'https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/landmarkData.json?alt=media&token=b958fe71-2fbb-495b-9376-bae91736fd3f';
-
+  loadData() async {
+    final url = 'https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/landmarkData1.json?alt=media&token=c33203ee-ce39-4b04-a9e0-4079058d13ee';
     http.Response response = await http.get(url);
+    final data = json.decode(response.body).cast<Map<String, dynamic>>();
 
-    final parsed = json.decode(response.body).cast<Map<String, dynamic>>();
-    landmarks = parsed.map<Landmark>((json) {
+//    String jsonString =
+//    await rootBundle.loadString('assets/data/landmarkData.json');
+//    final data = json.decode(jsonString).cast<Map<String, dynamic>>();
+    landmarks = data.map<Landmark>((json) {
       return Landmark.fromJson(json);
     }).toList();
     categories = groupBy(landmarks, (Landmark obj) => obj.category);
     setState(() {});
   }
 }
+
+
