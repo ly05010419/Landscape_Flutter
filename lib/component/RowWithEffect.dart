@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wwdcflutter/model/models.dart';
-import 'ItemView.dart';
+import 'ItemWidget.dart';
 
 class RowWithEffect extends StatefulWidget {
   final Landmark landmark;
@@ -62,7 +62,7 @@ class _RowWithEffectState extends State<RowWithEffect> {
                         height: height,
                         child: Align(
                           alignment: Alignment.bottomCenter,
-                          child: ItemView(
+                          child: ItemWidget(
                             imageName: widget.landmark.images[index],
                             width: width,
                             height: height,

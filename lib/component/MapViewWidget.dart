@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:wwdcflutter/model/models.dart';
 
-class MapView extends StatefulWidget {
+class MapViewWidget extends StatefulWidget {
   final Landmark landmark;
-  MapView({Key key, this.landmark}) : super(key: key);
+  MapViewWidget({Key key, this.landmark}) : super(key: key);
 
   @override
-  State<MapView> createState() => MapViewState();
+  State<MapViewWidget> createState() => MapViewWidgetState();
 }
 
-class MapViewState extends State<MapView> {
+class MapViewWidgetState extends State<MapViewWidget> {
   Set<Marker> markers = {};
   bool _showGoogleMaps = false;
   LatLng latlng;

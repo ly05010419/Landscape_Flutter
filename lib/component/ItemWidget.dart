@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:wwdcflutter/model/models.dart';
-import 'package:wwdcflutter/pages/HomePage.dart';
-import 'package:wwdcflutter/pages/DetailPage.dart';
 
-class ItemView extends StatelessWidget {
-  final Landmark landmark;
+class ItemWidget extends StatelessWidget {
   final String imageName;
   final double width;
   final double height;
-  ItemView({Key key, this.imageName, this.landmark, this.width, this.height})
+  ItemWidget({Key key, this.imageName, this.width, this.height})
       : super(key: key);
 
   @override
@@ -24,8 +20,7 @@ class ItemView extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(5),
             boxShadow: [
-              BoxShadow(
-                  color: Colors.black12, blurRadius: 5, offset: Offset(5, 5))
+              BoxShadow(color: Colors.black26, blurRadius: 5, offset: Offset(5, 5))
             ]),
       ),
     );

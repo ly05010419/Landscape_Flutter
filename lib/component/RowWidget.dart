@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:wwdcflutter/model/models.dart';
 import 'package:wwdcflutter/pages/DetailPage.dart';
-import 'ItemView.dart';
+import 'ItemWidget.dart';
 
-class RowView extends StatelessWidget {
+class RowWidget extends StatelessWidget {
   final String name;
   final Landmark landmark;
-  RowView({this.name, this.landmark});
+  RowWidget({this.name, this.landmark});
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +17,7 @@ class RowView extends StatelessWidget {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(left: 15, top: 0),
-            child: Text(
-              name,
+            child: Text(name,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
           ),
@@ -31,14 +30,11 @@ class RowView extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: GestureDetector(
-                    onTap: () {
-                      pushToDetailPage(context);
-                    },
-                    child: ItemView(
-                      landmark: landmark,
+                    onTap: (){pushToDetailPage(context);},
+                    child: ItemWidget(
                       imageName: landmark.images[index],
                       width: 150,
-                      height: 150,
+                      height: 200,
                     ),
                   ),
                 );
@@ -54,7 +50,7 @@ class RowView extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => DetailPage(
+        builder: (context) => DetailPageWidget(
           landmark: landmark,
         ),
       ),

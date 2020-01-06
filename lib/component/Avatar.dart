@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Avatar extends StatelessWidget {
+class AvatarWidget extends StatelessWidget {
   final String imageName;
-  Avatar({Key key, this.imageName}) : super(key: key);
+  AvatarWidget({Key key, this.imageName}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,6 @@ class Avatar extends StatelessWidget {
       decoration: BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(imageName),
-//            image: AssetImage("assets/images/" + imageName + ".jpg"),
             fit: BoxFit.cover,
           ),
           shape: BoxShape.circle,

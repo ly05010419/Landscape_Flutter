@@ -1,17 +1,18 @@
 import "package:collection/collection.dart";
 import 'package:flutter/material.dart';
+import 'package:wwdcflutter/component/ItemWidget.dart';
 import 'package:wwdcflutter/model/models.dart';
-import '../component/RowView.dart';
+import '../component/RowWidget.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-class HomePage extends StatefulWidget {
+class HomePageWidget extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomePageWidgetState createState() => _HomePageWidgetState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageWidgetState extends State<HomePageWidget> {
   List<Landmark> landmarks;
 
   void initState() {
@@ -21,26 +22,34 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+
 //    return Scaffold(
-//
-//        body: Center(child: RowView(name: landmarks[0].name, landmark: landmarks[0],))
+//      body: landmarks != null ? Center(child: ItemView(
+//        imageName: "https://firebasestorage.googleapis.com/v0/b/landschaft-955e6.appspot.com/o/Deutschland%20%2Fneuschwanstein-532850_640.jpg?alt=media&token=d4f1b23f-3be7-49a3-bf60-4ed9671f4cca",
+//        width: 150,
+//        height: 200,
+//      )): Container(),
 //    );
 
     return Scaffold(
-        appBar: AppBar(
-          elevation: 2.0,
-          backgroundColor: Colors.white,
-          title: Text("Landschaft", style: TextStyle(color: Colors.black,fontSize: 26),),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: SingleChildScrollView(
-            child: landmarks != null ? Column(
-                    children: landmarks.map((landmark) => RowView(name: landmark.name, landmark: landmark,)).toList(),
-            ) : Container(),
-          ),
-        )
+      body: landmarks != null ? Center(child: RowWidget(name: landmarks[0].name, landmark: landmarks[0],)): Container(),
     );
+
+//    return Scaffold(
+//        appBar: AppBar(
+//          elevation: 2.0,
+//          backgroundColor: Colors.white,
+//          title: Text("Landschaft", style: TextStyle(color: Colors.black,fontSize: 26),),
+//        ),
+//        body: Padding(
+//          padding: const EdgeInsets.only(top: 20),
+//          child: SingleChildScrollView(
+//            child: landmarks != null ? Column(
+//                    children: landmarks.map((landmark) => RowView(name: landmark.name, landmark: landmark,)).toList(),
+//            ) : Container(),
+//          ),
+//        )
+//    );
   }
 
   loadData() async {

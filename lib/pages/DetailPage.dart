@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:wwdcflutter/component/RowView.dart';
+import 'package:wwdcflutter/component/RowWidget.dart';
 import 'package:wwdcflutter/model/models.dart';
 import '../component/Avatar.dart';
 import '../component/RowWithEffect.dart';
-import '../component/MapView.dart';
+import '../component/MapViewWidget.dart';
 
-class DetailPage extends StatelessWidget {
+class DetailPageWidget extends StatelessWidget {
   final Landmark landmark;
-  DetailPage({this.landmark});
+  DetailPageWidget({this.landmark});
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +28,14 @@ class DetailPage extends StatelessWidget {
                 children: <Widget>[
                   Container(
                     height: 300,
-                    child: MapView(
+                    child: MapViewWidget(
                       landmark: landmark,
                     ),
                   ),
                   Align(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 200),
-                      child: Avatar(
+                      child: AvatarWidget(
                         imageName: landmark.avatarName,
                       ),
                     ),
@@ -44,7 +44,7 @@ class DetailPage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 20),
-                child: RowView(
+                child: RowWidget(
                   name: "All",
                   landmark: landmark,
                 ),
