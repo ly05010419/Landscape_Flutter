@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wwdcflutter/component/RowView.dart';
 import 'package:wwdcflutter/model/models.dart';
 import '../component/Avatar.dart';
 import '../component/RowWithEffect.dart';
@@ -42,15 +43,11 @@ class DetailPage extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Text(
-                  landmark.name,
-                  style: TextStyle(fontSize: 20),
+                padding: const EdgeInsets.only(top: 20),
+                child: RowView(
+                  name: "All",
+                  landmark: landmark,
                 ),
-              ),
-              RowWithEffect(
-                name: "All",
-                landmark: landmark,
               )
             ],
           ),

@@ -21,6 +21,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+//    return Scaffold(
+//
+//        body: Center(child: RowView(name: landmarks[0].name, landmark: landmarks[0],))
+//    );
+
     return Scaffold(
         appBar: AppBar(
           elevation: 2.0,
