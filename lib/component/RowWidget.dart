@@ -17,7 +17,8 @@ class RowWidget extends StatelessWidget {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(left: 15, top: 0),
-            child: Text(name,
+            child: Text(
+              name,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
           ),
@@ -29,8 +30,12 @@ class RowWidget extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                    onTap: (){pushToDetailPage(context);},
+                  child:
+
+                  GestureDetector(
+                    onTap: (){
+                      pushToDetailPage(context);
+                    },
                     child: ItemWidget(
                       imageName: landmark.images[index],
                       width: 150,
@@ -46,13 +51,11 @@ class RowWidget extends StatelessWidget {
     );
   }
 
-  pushToDetailPage(context) {
+  pushToDetailPage(BuildContext context) {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => DetailPageWidget(
-          landmark: landmark,
-        ),
+        builder: (context) => DetailPageWidget(landmark: landmark,),
       ),
     );
   }

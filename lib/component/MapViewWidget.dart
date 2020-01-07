@@ -6,7 +6,6 @@ import 'package:wwdcflutter/model/models.dart';
 class MapViewWidget extends StatefulWidget {
   final Landmark landmark;
   MapViewWidget({Key key, this.landmark}) : super(key: key);
-
   @override
   State<MapViewWidget> createState() => MapViewWidgetState();
 }
@@ -14,15 +13,12 @@ class MapViewWidget extends StatefulWidget {
 class MapViewWidgetState extends State<MapViewWidget> {
   Set<Marker> markers = {};
   bool _showGoogleMaps = false;
-  LatLng latlng;
+  LatLng coordinate;
 
   @override
   void initState() {
     super.initState();
-
-    latlng = LatLng(widget.landmark.latitude,
-        widget.landmark.longitude);
-
+    coordinate = LatLng(widget.landmark.latitude, widget.landmark.longitude);
     Future.delayed(const Duration(milliseconds: 250), () {
       setState(() {
         _showGoogleMaps = true;
@@ -42,7 +38,7 @@ class MapViewWidgetState extends State<MapViewWidget> {
             mapType: MapType.normal,
             myLocationButtonEnabled: false,
             initialCameraPosition: CameraPosition(
-              target: latlng,
+              target: coordinate,
               zoom: 5,
             ),
             onMapCreated: mapCreated,
@@ -55,9 +51,9 @@ class MapViewWidgetState extends State<MapViewWidget> {
   void mapCreated(GoogleMapController controller) {
     Marker marker = Marker(
         infoWindow: InfoWindow(title: widget.landmark.name),
-        markerId: MarkerId(latlng.toString()),
+        markerId: MarkerId(coordinate.toString()),
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
-        position: latlng);
+        position: coordinate);
 
     markers.add(marker);
     setState(() {});

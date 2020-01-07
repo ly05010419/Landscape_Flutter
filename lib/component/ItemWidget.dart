@@ -4,8 +4,7 @@ class ItemWidget extends StatelessWidget {
   final String imageName;
   final double width;
   final double height;
-  ItemWidget({Key key, this.imageName, this.width, this.height})
-      : super(key: key);
+  ItemWidget({Key key, this.imageName, this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,3 +25,5 @@ class ItemWidget extends StatelessWidget {
     );
   }
 }
+
+

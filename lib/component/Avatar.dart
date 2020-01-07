@@ -17,8 +17,9 @@ class AvatarWidget extends StatelessWidget {
           shape: BoxShape.circle,
           border: new Border.all(color: Colors.grey, width: 4),
           boxShadow: [
-            BoxShadow(color: Colors.black12, blurRadius: 10, spreadRadius: 10)
+            BoxShadow(color: Colors.black26, blurRadius: 10, spreadRadius: 10)
           ]),
     );
   }
 }
+

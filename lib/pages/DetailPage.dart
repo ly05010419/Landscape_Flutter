@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:wwdcflutter/component/RowWidget.dart';
 import 'package:wwdcflutter/model/models.dart';
 import '../component/Avatar.dart';
-import '../component/RowWithEffect.dart';
 import '../component/MapViewWidget.dart';
 
 class DetailPageWidget extends StatelessWidget {
