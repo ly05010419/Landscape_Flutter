@@ -13,12 +13,7 @@ class DetailPageWidget extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           elevation: 2.0,
-          backgroundColor: Colors.white,
-          iconTheme: IconThemeData(color: Colors.black),
-          title: Text(landmark.name,
-              style: TextStyle(
-                color: Colors.black,
-              )),
+          title: Text(landmark.name, style: TextStyle(color: Colors.black,)),
         ),
         body: SingleChildScrollView(
           child: Column(

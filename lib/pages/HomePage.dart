@@ -23,24 +23,20 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
   @override
   Widget build(BuildContext context) {
-
-
-
-//    return Scaffold(
-//        appBar: AppBar(
-//          elevation: 2.0,
-//          backgroundColor: Colors.white,
-//          title: Text("Landschaft", style: TextStyle(color: Colors.black,fontSize: 26),),
-//        ),
-//        body: Padding(
-//          padding: const EdgeInsets.only(top: 20),
-//          child: SingleChildScrollView(
-//            child: landmarks != null ? Column(
-//                    children: landmarks.map((landmark) => RowWidget(name: landmark.name, landmark: landmark,)).toList(),
-//            ) : Container(),
-//          ),
-//        )
-//    );
+    return Scaffold(
+        appBar: AppBar(
+          elevation: 2.0,
+          title: Text("Landschaft", style: TextStyle(color: Colors.black,fontSize: 21),),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.only(top: 20),
+          child: SingleChildScrollView(
+            child: landmarks != null ? Column(
+                    children: landmarks.map((landmark) => RowWidget(name: landmark.name, landmark: landmark,)).toList(),
+            ) : Container(),
+          ),
+        )
+    );
   }
 
   loadData() async {
