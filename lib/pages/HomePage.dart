@@ -26,7 +26,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     return Scaffold(
         appBar: AppBar(
           elevation: 2.0,
-          title: Text("Landschaft", style: TextStyle(color: Colors.black,fontSize: 21),),
+          title: Text("Landschaft", style: TextStyle(fontSize: 21),),
         ),
         body: Padding(
           padding: const EdgeInsets.only(top: 20),

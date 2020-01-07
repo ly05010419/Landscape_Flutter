@@ -13,7 +13,7 @@ class DetailPageWidget extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           elevation: 2.0,
-          title: Text(landmark.name, style: TextStyle(color: Colors.black,)),
+          title: Text(landmark.name, style: TextStyle(fontSize: 21)),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -26,9 +26,9 @@ class DetailPageWidget extends StatelessWidget {
                       landmark: landmark,
                     ),
                   ),
-                  Align(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 200),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 200),
+                    child: Align( alignment: Alignment.center,
                       child: AvatarWidget(
                         imageName: landmark.avatarName,
                       ),
